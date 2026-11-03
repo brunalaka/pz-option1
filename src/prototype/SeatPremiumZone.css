@@ -2142,7 +2142,7 @@ button.sp-suggestion-row:focus-visible {
 }
 
 .sp-trip-details-panel [class*="hcr-panel__content"] {
-  padding: var(--hcr-spacing-2, 12px) !important;
+  padding: var(--hcr-spacing-2, 12px) var(--hcr-spacing-2, 12px) 80px !important;
 }
 
 /* Header */
