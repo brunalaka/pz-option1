@@ -68,7 +68,7 @@
   flex: 1;
   min-height: 0;
   overflow-y: auto;
-  padding: var(--hcr-spacing-2, 12px) 0 80px;
+  padding: var(--hcr-spacing-2, 12px) 0 120px;
 }
 
 /* ── Deck nav ─────────────────────────────────────────────────────────────── */
@@ -615,7 +615,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--hcr-spacing-2, 12px);
-  padding: var(--hcr-spacing-4, 24px) var(--hcr-spacing-4, 24px) 80px;
+  padding: var(--hcr-spacing-4, 24px) var(--hcr-spacing-4, 24px) 120px;
 }
 
 .sm-cat-card {

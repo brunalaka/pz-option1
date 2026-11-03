@@ -1992,6 +1992,7 @@ button.sp-suggestion-row:focus-visible {
   flex-direction: column;
   gap: var(--hcr-spacing-2, 12px);
   overflow-y: auto;
+  padding-bottom: 120px;
 }
 
 /* ── Shared Premium Zone pill (Honeycomb Tag styled dark) ────────────────── */
@@ -2142,7 +2143,7 @@ button.sp-suggestion-row:focus-visible {
 }
 
 .sp-trip-details-panel [class*="hcr-panel__content"] {
-  padding: var(--hcr-spacing-2, 12px) var(--hcr-spacing-2, 12px) 80px !important;
+  padding: var(--hcr-spacing-2, 12px) var(--hcr-spacing-2, 12px) 120px !important;
 }
 
 /* Header */
