@@ -1914,35 +1914,36 @@ button.sp-suggestion-row:focus-visible {
   gap: var(--hcr-spacing-1, 6px);
   padding: 8px 10px;
   margin: 0 -9px -6px;
-  background: var(--hcr-content-primary-color, #353535);
+  background: var(--hcr-bg-primary-color, #ffffff);
   border: none;
+  border-top: 1px solid var(--hcr-line-primary-color, #c8c8c8);
   border-radius: 0 0 5px 5px;
   outline: none;
   cursor: pointer;
   text-align: left;
   width: calc(100% + 18px);
-  color: var(--hcr-bg-primary-color, #ffffff);
+  color: var(--hcr-content-primary-color, #353535);
 }
 
 .trip-pz-row img {
   flex-shrink: 0;
   display: block;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .trip-pz-label {
-  flex: 1;
+  width: fit-content;
   font-size: var(--hcr-font-size-small, .875rem);
   font-weight: 400;
   line-height: var(--hcr-line-height-small, 1.125rem);
-  color: var(--hcr-bg-primary-color, #ffffff);
+  color: var(--hcr-content-primary-color, #353535);
 }
 
 .trip-pz-chevron {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  color: var(--hcr-bg-primary-color, #ffffff);
+  color: var(--hcr-content-primary-color, #353535);
 }
 
 /* ── Trip card urgency text ─────────────────────────────────────────────────── */
@@ -2423,7 +2424,7 @@ button.sp-suggestion-row:focus-visible {
 /* ── Nova Box banner ─────────────────────────────────────────────────────── */
 .sp-nova-box {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   margin: 0 12px 12px;
   padding: 12px;

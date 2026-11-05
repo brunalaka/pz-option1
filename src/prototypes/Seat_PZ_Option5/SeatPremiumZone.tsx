@@ -949,7 +949,7 @@ export const SeatPremiumZone = ({ defaultSeatMapOpen = false }: { defaultSeatMap
           <span className="sp-nova-box-body">Enjoy a more comfortable journey, better Wi-Fi and priority boarding on selected buses.</span>
         </div>
         <div className="sp-nova-box-arrow">
-          <Icon InlineIcon={IconArrowRight} aria-hidden="true" size={3} />
+          <Icon InlineIcon={IconArrowDown} aria-hidden="true" size={4} />
         </div>
       </button>
 

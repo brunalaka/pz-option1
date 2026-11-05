@@ -583,7 +583,7 @@ export function SeatMap({ active, onClose }: SeatMapProps) {
       </PanelHeader>
       <PanelContent extraClasses="sm-legend-detail-content">
         <div className="sm-cat-list">
-          <div className="sm-cat-card">
+          <button type="button" className="sm-cat-card" aria-label="Show Premium Single seats on the map" onClick={() => navigateToCategory('premiumSingle')}>
             <div className="sm-cat-photo-wrap">
               <img src={photoSeatPremiumZone} alt="" aria-hidden="true" />
             </div>
@@ -595,12 +595,12 @@ export function SeatMap({ active, onClose }: SeatMapProps) {
                 </div>
                 <p className="sm-cat-desc">More privacy, more comfortable seats, better wi-fi and priority boarding.</p>
               </div>
-              <button type="button" className="sm-cat-nav-btn" aria-label="Show Premium Single seats on the map" onClick={() => navigateToCategory('premiumSingle')}>
+              <span className="sm-cat-nav-icon" aria-hidden="true">
                 <Icon InlineIcon={IconArrowRight} aria-hidden="true" size={4} />
-              </button>
+              </span>
             </div>
-          </div>
-          <div className="sm-cat-card">
+          </button>
+          <button type="button" className="sm-cat-card" aria-label="Show Premium seats on the map" onClick={() => navigateToCategory('premiumPair')}>
             <div className="sm-cat-photo-wrap">
               <img src={photoSeatPremiumZone} alt="" aria-hidden="true" />
             </div>
@@ -612,12 +612,12 @@ export function SeatMap({ active, onClose }: SeatMapProps) {
                 </div>
                 <p className="sm-cat-desc">Privacy, more comfortable seats, better wi-fi and priority boarding.</p>
               </div>
-              <button type="button" className="sm-cat-nav-btn" aria-label="Show Premium seats on the map" onClick={() => navigateToCategory('premiumPair')}>
+              <span className="sm-cat-nav-icon" aria-hidden="true">
                 <Icon InlineIcon={IconArrowRight} aria-hidden="true" size={4} />
-              </button>
+              </span>
             </div>
-          </div>
-          <div className="sm-cat-card">
+          </button>
+          <button type="button" className="sm-cat-card" aria-label="Show Panorama seats on the map" onClick={() => navigateToCategory('panorama')}>
             <div className="sm-cat-photo-wrap">
               <img src={photoSeatPanorama} alt="" aria-hidden="true" />
             </div>
@@ -629,12 +629,12 @@ export function SeatMap({ active, onClose }: SeatMapProps) {
                 </div>
                 <p className="sm-cat-desc">Enjoy a great view in the first row.</p>
               </div>
-              <button type="button" className="sm-cat-nav-btn" aria-label="Show Panorama seats on the map" onClick={() => navigateToCategory('panorama')}>
+              <span className="sm-cat-nav-icon" aria-hidden="true">
                 <Icon InlineIcon={IconArrowRight} aria-hidden="true" size={4} />
-              </button>
+              </span>
             </div>
-          </div>
-          <div className="sm-cat-card">
+          </button>
+          <button type="button" className="sm-cat-card" aria-label="Show Front seats on the map" onClick={() => navigateToCategory('front')}>
             <div className="sm-cat-photo-wrap">
               <img src={photoSeatFront} alt="" aria-hidden="true" />
             </div>
@@ -646,12 +646,12 @@ export function SeatMap({ active, onClose }: SeatMapProps) {
                 </div>
                 <p className="sm-cat-desc">Enjoy a smooth, quiet trip at the front of the bus.</p>
               </div>
-              <button type="button" className="sm-cat-nav-btn" aria-label="Show Front seats on the map" onClick={() => navigateToCategory('front')}>
+              <span className="sm-cat-nav-icon" aria-hidden="true">
                 <Icon InlineIcon={IconArrowRight} aria-hidden="true" size={4} />
-              </button>
+              </span>
             </div>
-          </div>
-          <div className="sm-cat-card">
+          </button>
+          <button type="button" className="sm-cat-card" aria-label="Show Classic seats on the map" onClick={() => navigateToCategory('classic')}>
             <div className="sm-cat-photo-wrap">
               <img src={photoSeatClassic} alt="" aria-hidden="true" />
             </div>
@@ -663,11 +663,11 @@ export function SeatMap({ active, onClose }: SeatMapProps) {
                 </div>
                 <p className="sm-cat-desc">Decide whether you want a window or an aisle seat.</p>
               </div>
-              <button type="button" className="sm-cat-nav-btn" aria-label="Show Classic seats on the map" onClick={() => navigateToCategory('classic')}>
+              <span className="sm-cat-nav-icon" aria-hidden="true">
                 <Icon InlineIcon={IconArrowRight} aria-hidden="true" size={4} />
-              </button>
+              </span>
             </div>
-          </div>
+          </button>
         </div>
       </PanelContent>
     </Panel>

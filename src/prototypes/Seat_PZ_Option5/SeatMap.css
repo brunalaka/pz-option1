@@ -623,6 +623,15 @@
   border-radius: var(--hcr-spacing-1, 6px);
   border: 1px solid var(--hcr-line-primary-color, #c8c8c8);
   overflow: hidden;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.sm-cat-card:hover .sm-cat-body {
+  background: var(--hcr-bg-secondary-color, #f7f7f7);
 }
 
 .sm-cat-photo-wrap {
@@ -688,23 +697,12 @@
   color: var(--hcr-content-primary-color, #353535);
 }
 
-.sm-cat-nav-btn {
+.sm-cat-nav-icon {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
   color: var(--hcr-content-primary-color, #353535);
-  border-radius: 4px;
-}
-
-.sm-cat-nav-btn:hover {
-  background: var(--hcr-bg-secondary-color, #f7f7f7);
 }
 
 /* ── Seat highlight blink ─────────────────────────────────────────────────── */
