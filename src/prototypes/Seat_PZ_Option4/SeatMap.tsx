@@ -138,17 +138,16 @@ function SeatButton({
 
   const handleClick = () => {
     if (isUnavailable) return;
-    if (isSelected) { onToggle(); return; }
-    if (tapActive) {
-      // Second tap while tooltip is showing — select the seat
-      if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
-      setTapActive(false);
-      onToggle();
-    } else {
-      // First tap — show tooltip preview for 2.5 s
+    onToggle();
+    if (!isSelected) {
+      // Selecting — show tooltip for 2.5 s
       setTapActive(true);
       if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
       tapTimerRef.current = setTimeout(() => setTapActive(false), 2500);
+    } else {
+      // Deselecting — clear tooltip
+      setTapActive(false);
+      if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
     }
   };
 
@@ -214,7 +213,7 @@ function SeatButton({
       />
 
       {/* Hover / tap tooltip */}
-      {!isSelected && !isUnavailable && (
+      {(!isSelected || tapActive) && !isUnavailable && (
         <div className={`sm-seat-tooltip${tapActive ? ' sm-seat-tooltip--tap-active' : ''}`} role="tooltip">
           <div className="sm-tooltip-body">
             <div className="sm-tooltip-header">
