@@ -325,7 +325,8 @@
   transition: opacity 0.12s ease;
 }
 
-.sm-seat:not(.sm-seat--selected):not(.sm-seat--unavailable):hover .sm-seat-tooltip {
+.sm-seat:not(.sm-seat--selected):not(.sm-seat--unavailable):hover .sm-seat-tooltip,
+.sm-seat-tooltip--tap-active {
   opacity: 1;
 }
 

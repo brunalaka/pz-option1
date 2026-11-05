@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Button,
   Heading,
@@ -133,6 +133,25 @@ function SeatButton({
   const isSelected = status === 'selected';
   const isUnavailable = status === 'unavailable';
 
+  const [tapActive, setTapActive] = useState(false);
+  const tapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleClick = () => {
+    if (isUnavailable) return;
+    if (isSelected) { onToggle(); return; }
+    if (tapActive) {
+      // Second tap while tooltip is showing — select the seat
+      if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
+      setTapActive(false);
+      onToggle();
+    } else {
+      // First tap — show tooltip preview for 2.5 s
+      setTapActive(true);
+      if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
+      tapTimerRef.current = setTimeout(() => setTapActive(false), 2500);
+    }
+  };
+
   const rowLabel = deck.rowLabels.find((r) => r.slot === seat.slot)?.label;
   const colLetter: Record<ColId, string> = { LEFT: 'A', RIGHT_A: 'B', RIGHT_B: 'C' };
   const seatCode = rowLabel ? `${rowLabel}${colLetter[seat.col]}` : colLetter[seat.col];
@@ -158,7 +177,7 @@ function SeatButton({
       aria-label={`Row ${seat.slot + 1} seat ${seat.col}, ${seat.type}, ${status}`}
       aria-pressed={isSelected}
       disabled={isUnavailable}
-      onClick={isUnavailable ? undefined : onToggle}
+      onClick={handleClick}
     >
       {/* Available state */}
       <div className="sm-seat-inner" />
@@ -194,9 +213,9 @@ function SeatButton({
         aria-hidden="true"
       />
 
-      {/* Hover tooltip */}
+      {/* Hover / tap tooltip */}
       {!isSelected && !isUnavailable && (
-        <div className="sm-seat-tooltip" role="tooltip">
+        <div className={`sm-seat-tooltip${tapActive ? ' sm-seat-tooltip--tap-active' : ''}`} role="tooltip">
           <div className="sm-tooltip-body">
             <div className="sm-tooltip-header">
               <div className={`sm-tooltip-nr${isPremium ? ' sm-tooltip-nr--premium' : ''}`}>
